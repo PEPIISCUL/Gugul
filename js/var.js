@@ -21,19 +21,19 @@ function RemoveDOMelement3(){
 function RemoveDOMelement4(){
     c4 += 1
     if (c4 == 0) {
-        document.getElementById("eee").src="img/1.png";
+        document.getElementById("eee").src="../img/1.png";
     }
     if (c4 == 1) {
-        document.getElementById("eee").src="img/2.png";
+        document.getElementById("eee").src="../img/2.png";
     }
     if (c4 == 2) {
-        document.getElementById("eee").src="img/3.png";
+        document.getElementById("eee").src="../img/3.png";
     }
     if (c4 == 3) {
-        document.getElementById("eee").src="img/4.png";
+        document.getElementById("eee").src="../img/4.png";
     }
     if (c4 == 4) {
-        document.getElementById("eee").src="img/5.png";
+        document.getElementById("eee").src="../img/5.png";
     }
     if (c4 > 4) {
         c4 = 4
@@ -46,19 +46,19 @@ function RemoveDOMelement4(){
 function RemoveDOMelement24(){
     c4 -= 1
     if (c4 == 0) {
-        document.getElementById("eee").src="img/1.png";
+        document.getElementById("eee").src="../img/1.png";
     }
     if (c4 == 1) {
-        document.getElementById("eee").src="img/2.png";
+        document.getElementById("eee").src="../img/2.png";
     }
     if (c4 == 2) {
-        document.getElementById("eee").src="img/3.png";
+        document.getElementById("eee").src="../img/3.png";
     }
     if (c4 == 3) {
-        document.getElementById("eee").src="img/4.png";
+        document.getElementById("eee").src="../img/4.png";
     }
     if (c4 == 4) {
-        document.getElementById("eee").src="img/5.png";
+        document.getElementById("eee").src="../img/5.png";
     }
     if (c4 > 4) {
         c4 = 4
