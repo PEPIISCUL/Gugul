@@ -28,8 +28,8 @@ input.addEventListener('keydown', (event) => {
         a3 += i
         for (let j = 0; j < a[i].length; j++) {
           //aa.push(a[i][j])
-          if (document.getElementById("e").value[j] == a[i][j]) {
-            //console.log("uuuiii")
+          //console.log(j)
+          if (document.getElementById("e").value[j] == a[i][j].toLowerCase() || document.getElementById("e").value[j] == a[i][j].toUpperCase()) {
             if (i == 0) {
                 p += 1
             }
@@ -52,23 +52,35 @@ input.addEventListener('keydown', (event) => {
           document.getElementById(i + 1).innerHTML = a[2].bold()
           document.getElementById(i + 1).href = "html/cul.html"
           document.getElementById(i + 1 + "i").src = "img/3s.png"
+          document.getElementById("none1").innerHTML = ""
         }
         if (aa[i][1] == "p"){
           document.getElementById(i + 1).innerHTML = a[0].bold()
           document.getElementById(i + 1).href = "PEPIMAZON/PepiMazon.html"
           document.getElementById(i + 1 + "i").src = "img/2s.png"
+          document.getElementById("none1").innerHTML = ""
         }
         if (aa[i][1] == "c"){
           document.getElementById(i + 1).innerHTML = a[1].bold()
           document.getElementById(i + 1).href = "html/car.html"
           document.getElementById(i + 1 + "i").src = "img/1s.png"
           //console.log(i + 1 + "a")
+          document.getElementById("none1").innerHTML = ""
         }
         }
-      if (document.getElementById("e").value == ""){
-        document.getElementById("1").innerHTML = ""
-        document.getElementById("2").innerHTML = ""
-        document.getElementById("3").innerHTML = ""
+      if (document.getElementById("e").value == "" || p == 0 && c == 0 && am == 0){
+        if (document.getElementById("e").value != "" || p == 0 && c == 0 && am == 0){
+          document.getElementById("none1").innerHTML = "No results"
+          document.getElementById("1").innerHTML = ""
+          document.getElementById("2").innerHTML = ""
+          document.getElementById("3").innerHTML = ""
+        }
+        if (document.getElementById("e").value == ""){
+          document.getElementById("none1").innerHTML = ""
+          document.getElementById("1").innerHTML = ""
+          document.getElementById("2").innerHTML = ""
+          document.getElementById("3").innerHTML = ""
+        }
 
         document.getElementById("1i").style.display = "none"
         document.getElementById("2i").style.display = "none"
