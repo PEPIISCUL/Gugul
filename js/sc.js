@@ -1,5 +1,5 @@
 var input = document.getElementById("e")
-var a = ["PepiMazon", "Car", "Cul"]
+var a = ["PepiMazon", "Car", "Cul", "PepiNote"]
 //a.push("aaa")
 var aa = []
 var a2 = "a23"
@@ -7,6 +7,7 @@ var a3 = ""
 var p = 0
 var c = 0
 var am = 0
+var pe = 0
 //aa.sort()
 //console.log(aa)
 input.addEventListener('keydown', (event) => {
@@ -21,6 +22,7 @@ input.addEventListener('keydown', (event) => {
       p = 0
       c = 0
       am = 0
+      pe = 0
       if (document.getElementById("e").value == a[0][0]) {
         document.getElementById("1").innerHTML = a[0]
       }
@@ -39,11 +41,14 @@ input.addEventListener('keydown', (event) => {
             if (i == 2) {
                 am += 1
             }
+            if (i == 3) {
+                pe += 1
+            }
           }
         }
       }
       //document.getElementById("1").innerHTML = a3
-      aa.push(p + "p", c + "c", am + "a")
+      aa.push(p + "p", c + "c", am + "a", pe + "e")
       aa.sort()
       aa.reverse()
       //console.log(aa)
@@ -66,6 +71,14 @@ input.addEventListener('keydown', (event) => {
           document.getElementById(i + 1).innerHTML = a[1].bold()
           document.getElementById(i + 1).href = "html/car.html"
           document.getElementById(i + 1 + "i").src = "img/1s.png"
+          //console.log(i + 1 + "a")
+          document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
+          document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
+        }
+        if (aa[i][1] == "e"){
+          document.getElementById(i + 1).innerHTML = a[3].bold()
+          document.getElementById(i + 1).href = "html/PepiNote.html"
+          document.getElementById(i + 1 + "i").src = "img/4s.png"
           //console.log(i + 1 + "a")
           document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
           document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
