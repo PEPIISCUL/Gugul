@@ -1,5 +1,5 @@
 var input = document.getElementById("e")
-var a = ["PepiMazon", "Car", "Cul", "PepiNote"]
+var a = ["PepiMazon", "Car", "Cul", "PepiNote", "Nanobot"]
 //a.push("aaa")
 var aa = []
 var a2 = "a23"
@@ -8,8 +8,9 @@ var p = 0
 var c = 0
 var am = 0
 var pe = 0
+var n = 0
 //aa.sort()
-//console.log(aa)
+console.log(a)
 input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       document.getElementById("1i").style.display = "block"
@@ -23,6 +24,7 @@ input.addEventListener('keydown', (event) => {
       c = 0
       am = 0
       pe = 0
+      n = 0
       if (document.getElementById("e").value == a[0][0]) {
         document.getElementById("1").innerHTML = a[0]
       }
@@ -44,11 +46,14 @@ input.addEventListener('keydown', (event) => {
             if (i == 3) {
                 pe += 1
             }
+            if (i == 4) {
+                n += 1
+            }
           }
         }
       }
       //document.getElementById("1").innerHTML = a3
-      aa.push(p + "p", c + "c", am + "a", pe + "e")
+      aa.push(p + "p", c + "c", am + "a", pe + "e", n + "n")
       aa.sort()
       aa.reverse()
       //console.log(aa)
@@ -83,9 +88,17 @@ input.addEventListener('keydown', (event) => {
           document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
           document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
         }
+        if (aa[i][1] == "n"){
+          document.getElementById(i + 1).innerHTML = a[4].bold()
+          document.getElementById(i + 1).href = "html/nanobot.html"
+          document.getElementById(i + 1 + "i").src = "img/5s.png"
+          //console.log(i + 1 + "a")
+          document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
+          document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
         }
-      if (document.getElementById("e").value == "" || p == 0 && c == 0 && am == 0){
-        if (document.getElementById("e").value != "" || p == 0 && c == 0 && am == 0){
+        }
+      if (document.getElementById("e").value == "" || p == 0 && c == 0 && am == 0 && pe == 0){
+        if (document.getElementById("e").value != "" || p == 0 && c == 0 && am == 0 && pe == 0){
           document.getElementById("none1").innerHTML = "No results".bold()
           document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
           document.getElementById("1").innerHTML = ""
@@ -104,6 +117,16 @@ input.addEventListener('keydown', (event) => {
         document.getElementById("2i").style.display = "none"
         document.getElementById("3i").style.display = "none"
       }
-      }
     }
+  }
 );
+function exi() {
+  document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
+  document.getElementById("1").innerHTML = ""
+  document.getElementById("2").innerHTML = ""
+  document.getElementById("3").innerHTML = ""
+  document.getElementById("1i").style.display = "none"
+  document.getElementById("2i").style.display = "none"
+  document.getElementById("3i").style.display = "none"
+  document.getElementById("e").value = ""
+}
