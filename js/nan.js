@@ -4,8 +4,8 @@ var culx = 0
 var culy = 0
 var cx = document.getElementById("a").style.marginLeft
 var cy = document.getElementById("a").style.marginTop
-const screenHeight = window.screen.height - 350
-const screenWidth = window.screen.width - 250
+const screenHeight = window.screen.height - 200
+const screenWidth = window.screen.width - 150
 //function getRandomInt(max) {
 //  return Math.floor(Math.random() * max);
 //}
