@@ -1,5 +1,5 @@
 var input = document.getElementById("e")
-var a = ["PepiMazon", "Car", "Cul", "PepiNote", "Nanobot", "BounceDupe"]
+var a = ["PepiMazon", "Car", "Cul", "PepiNote", "Nanobot", "BounceDupe", "CollisionTest"]
 //a.push("aaa")
 var aa = []
 var a2 = "a23"
@@ -10,6 +10,7 @@ var am = 0
 var pe = 0
 var n = 0
 var bu = 0
+var cl = 0
 //aa.sort()
 console.log(a)
 function onsr() {
@@ -26,6 +27,7 @@ function onsr() {
   pe = 0
   n = 0
   bu = 0
+  cl = 0
   if (document.getElementById("e").value == a[0][0]) {
     document.getElementById("1").innerHTML = a[0]
   }
@@ -53,11 +55,14 @@ function onsr() {
         if (i == 5) {
             bu += 1
         }
+        if (i == 6) {
+            cl += 1
+        }
       }
     }
   }
   //document.getElementById("1").innerHTML = a3
-  aa.push(p + "p", c + "c", am + "a", pe + "e", n + "n", bu + "b")
+  aa.push(p + "p", c + "c", am + "a", pe + "e", n + "n", bu + "b", cl + "cl")
   aa.sort()
   aa.reverse()
   //console.log(aa)
@@ -108,9 +113,17 @@ function onsr() {
       document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
       document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
     }
+    if (aa[i][1] == "c" && aa[i][2] == "l"){
+      document.getElementById(i + 1).innerHTML = a[6].bold()
+      document.getElementById(i + 1).href = "html/TEST.html"
+      document.getElementById(i + 1 + "i").src = "img/7s.png"
+      //console.log(i + 1 + "a")
+      document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
+      document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
     }
-  if (document.getElementById("e").value == "" || p == 0 && c == 0 && am == 0 && pe == 0){
-    if (document.getElementById("e").value != "" || p == 0 && c == 0 && am == 0 && pe == 0){
+    }
+  if (document.getElementById("e").value == "" || p == 0 && c == 0 && am == 0 && pe == 0 && cl == 0){
+    if (document.getElementById("e").value != "" || p == 0 && c == 0 && am == 0 && pe == 0 && cl == 0){
       document.getElementById("none1").innerHTML = "No results".bold()
       document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
       document.getElementById("1").innerHTML = ""
@@ -124,6 +137,7 @@ function onsr() {
       document.getElementById("2").innerHTML = ""
       document.getElementById("3").innerHTML = ""
     }
+
     document.getElementById("1i").style.display = "none"
     document.getElementById("2i").style.display = "none"
     document.getElementById("3i").style.display = "none"
