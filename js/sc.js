@@ -14,13 +14,39 @@ var cl = 0
 //aa.sort()
 console.log(a)
 input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && document.getElementById("e").value != "") {
       document.getElementById("1i").style.display = "block"
       document.getElementById("2i").style.display = "block"
       document.getElementById("3i").style.display = "block"
       document.getElementById("1").href = ""
       document.getElementById("2").href = ""
       document.getElementById("3").href = ""
+      const elm = document.createElement("a")
+      elm.id = "4"
+      elm.style = "font-size: 25px;"
+      const elm2 = document.createElement("br")
+      elm2.id = "br1"
+      const elm3 = document.createElement("img")
+      elm3.id = "4i"
+      const elm4 = document.createElement("br")
+      elm4.id = "br2"
+      document.getElementById('cdi').appendChild(elm)
+      document.getElementById('cdi').appendChild(elm2)
+      document.getElementById('cdi').appendChild(elm3)
+      document.getElementById('cdi').appendChild(elm4)
+      const elma = document.createElement("a")
+      elma.id = "5"
+      elma.style = "font-size: 25px;"
+      const elma2 = document.createElement("br")
+      elma2.id = "br3"
+      const elma3 = document.createElement("img")
+      elma3.id = "5i"
+      const elma4 = document.createElement("br")
+      elma4.id = "br4"
+      document.getElementById('cdi').appendChild(elma)
+      document.getElementById('cdi').appendChild(elma2)
+      document.getElementById('cdi').appendChild(elma3)
+      document.getElementById('cdi').appendChild(elma4)
       aa = []
       p = 0
       c = 0
@@ -154,5 +180,13 @@ function exi() {
   document.getElementById("1i").style.display = "none"
   document.getElementById("2i").style.display = "none"
   document.getElementById("3i").style.display = "none"
+  document.getElementById("4").remove()
+  document.getElementById("4i").remove()
+  document.getElementById("5").remove()
+  document.getElementById("5i").remove()
+  document.getElementById("br1").remove()
+  document.getElementById("br2").remove()
+  document.getElementById("br3").remove()
+  document.getElementById("br4").remove()
   document.getElementById("e").value = ""
 }
