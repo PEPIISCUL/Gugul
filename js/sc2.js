@@ -1,5 +1,5 @@
 var input = document.getElementById("e")
-var a = ["PepiMazon", "Car", "Cul", "PepiNote", "Nanobot", "BounceDupe", "CollisionTest"]
+var a = ["PepiMazon", "Car", "Cul", "PepiNote", "Nanobot", "BounceDupe", "CollisionTest", "Nuke The Witch"]
 //a.push("aaa")
 var aa = []
 var a2 = "a23"
@@ -11,10 +11,12 @@ var pe = 0
 var n = 0
 var bu = 0
 var cl = 0
+var wt = 0
 //aa.sort()
 console.log(a)
 function onsr() {
   if (document.getElementById("e").value != "") {
+    document.getElementById("serc").innerHTML = parseInt(document.getElementById("serc").innerHTML) + 1
     document.getElementById("1i").style.display = "block"
     document.getElementById("2i").style.display = "block"
     document.getElementById("3i").style.display = "block"
@@ -55,6 +57,7 @@ function onsr() {
     n = 0
     bu = 0
     cl = 0
+    wt = 0
     if (document.getElementById("e").value == a[0][0]) {
       document.getElementById("1").innerHTML = a[0]
     }
@@ -85,11 +88,14 @@ function onsr() {
           if (i == 6) {
               cl += 1
           }
+          if (i == 7) {
+              wt += 1
+          }
         }
       }
     }
     //document.getElementById("1").innerHTML = a3
-    aa.push(p + "p", c + "c", am + "a", pe + "e", n + "n", bu + "b", cl + "cl")
+    aa.push(p + "p", c + "c", am + "a", pe + "e", n + "n", bu + "b", cl + "cl", wt + "w")
     aa.sort()
     aa.reverse()
     //console.log(aa)
@@ -144,6 +150,14 @@ function onsr() {
         document.getElementById(i + 1).innerHTML = a[6].bold()
         document.getElementById(i + 1).href = "html/TEST.html"
         document.getElementById(i + 1 + "i").src = "img/7s.png"
+        //console.log(i + 1 + "a")
+        document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
+        document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
+      }
+      if (aa[i][1] == "w"){
+        document.getElementById(i + 1).innerHTML = a[7].bold()
+        document.getElementById(i + 1).href = "html/NukeTheWitch.html"
+        document.getElementById(i + 1 + "i").src = "img/8s.png"
         //console.log(i + 1 + "a")
         document.getElementById("none1").innerHTML = "SEARCH!!!".bold()
         document.getElementById("none1").style = "font-size: 75px;text-align: center;font-family:'Courier New', Courier, monospace;"
