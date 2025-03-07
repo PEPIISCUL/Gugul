@@ -24,7 +24,7 @@ function animate() {
   }
   count = count + 1
   if (count == 15){
-    for (let i = 0; i < parseInt(document.getElementById("nm").innerHTML); i++){
+    for (let i = 0; i < parseInt(document.getElementById("nm2").innerHTML); i++){
       imherer = Math.floor(Math.random()*500)
       if (imherer == 0){
           audio2.cloneNode(true).play();

@@ -34,7 +34,8 @@ function start(){
             newimg.style.marginLeft = Math.floor(Math.random()*w) + 'px'
             newimg.style.marginTop = Math.floor(Math.random()*h) + 'px'
             document.getElementById('z').appendChild(newimg)
-            document.getElementById('nm').innerHTML = num
+            document.getElementById('nm').innerHTML = "Nanobots ordered: " + num
+            document.getElementById('nm2').innerHTML = num
         }
     }
 }
@@ -69,7 +70,8 @@ function cul() {
     newimg.style.marginLeft = Math.floor(Math.random()*w) + 'px'
     newimg.style.marginTop = Math.floor(Math.random()*h) + 'px'
     document.getElementById('z').appendChild(newimg)
-    document.getElementById('nm').innerHTML = num
+    document.getElementById('nm').innerHTML = "Nanobots ordered: " + num
+    document.getElementById('nm2').innerHTML = num
     localStorage.setItem("num",num);
     if (num==1){
         location.reload()
