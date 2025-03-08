@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body id="z" style="background-color:#ebb3b3;">
+            <title>Nanobot Delivery Service</title>
+            <p>Trash Can - Remove Nanobots</p>
+            <p id="norm">Normal Nanobots: </p>
+            <input id="norm1" type="number" min="0"><button onclick="norm()">Remove</button>
+            <p id="gold">Gold Nanobots: </p>
+            <input id="gold1" type="number" min="0"><button onclick="gold()">Remove</button>
+            <br>
+            <br>
+            <br>
+            <a href="items.html">back</a>
+            <script>
+                document.getElementById("norm").innerHTML = "Normal Nanobots: " + (localStorage.getItem("num")-localStorage.getItem("numgold")).toString()
+                document.getElementById("norm1").setAttribute("max", (localStorage.getItem("num")-localStorage.getItem("numgold")).toString())
+                document.getElementById("gold").innerHTML = "Gold Nanobots: " + (localStorage.getItem("numgold")).toString()
+                document.getElementById("gold1").setAttribute("max", (localStorage.getItem("numgold")).toString())
+                function norm(){
+                    if (document.getElementById("norm1").value>-1 && document.getElementById("norm1").value<localStorage.getItem("num")-localStorage.getItem("numgold")+1){
+                        localStorage.setItem("num", localStorage.getItem("num")-document.getElementById("norm1").value)
+                        location.reload()
+                    }
+                    
+                }
+                function gold(){
+                    if (document.getElementById("gold1").value>-1 && document.getElementById("gold1").value<localStorage.getItem("numgold")+1){
+                        localStorage.setItem("numgold", localStorage.getItem("numgold")-document.getElementById("gold1").value)
+                        location.reload()
+                    }
+                    
+                }
+            </script>
+        </body>
+    </head>
+</html>

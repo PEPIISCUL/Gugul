@@ -137,6 +137,8 @@ function fun() {
     localStorage.setItem("num",0);
     localStorage.setItem("mum",75);
     localStorage.setItem("numgold",0);
+    localStorage.setItem("trashcan", "0")
+    localStorage.setItem("moneybuy", "0")
     location.reload()
 }
 

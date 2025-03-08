@@ -5,15 +5,23 @@
             <title>Nanobot Delivery Service</title>
             <p>Catch the Nanobot</p>
             <p id="monn">Money: 0$</p>
+            <p id="boost">Nanobot multiplier: 0X</p>
             <a href="shop.html">back</a>
             <img id="amg" src="../../img/nanobotog.png" style="margin-top: 0px;margin-left: 0px;position: absolute;display:flex" onclick="cul2()">
-            <script>document.getElementById("monn").innerHTML = "Money: " + localStorage.getItem("mum").toString() + "$"</script>
-            <script>window.onload = function() {document.getElementById("amg").style.marginLeft = Math.floor(Math.random()*(window.screen.availWidth - 200)) + 'px'
-                    document.getElementById("amg").style.marginTop = Math.floor(Math.random()*(window.screen.availHeight - 350)) + 'px'}</script>
+            <script>document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"</script>
             <script>
-                function cul2(){
-                    localStorage.setItem("mum", parseInt(localStorage.getItem("mum"))+10)
-                    document.getElementById("monn").innerHTML = "Money: " + localStorage.getItem("mum").toString() + "$"
+                    window.onload = function() {
+                    document.getElementById("amg").style.marginLeft = Math.floor(Math.random()*(window.screen.availWidth - 200)) + 'px'
+                    document.getElementById("amg").style.marginTop = Math.floor(Math.random()*(window.screen.availHeight - 350)) + 'px'
+                    var nim = parseInt(localStorage.getItem("num"))*0.01+1
+                    document.getElementById("boost").innerHTML = "Nanobot multiplier: " + nim.toString() + "X"}</script>
+                    
+            <script>
+                var audio = new Audio('../../audio/money.mp3')
+                function cul2(){audio.cloneNode(true).play();
+                    var nim = 10*(parseInt(localStorage.getItem("num"))*0.01+1)
+                    localStorage.setItem("mum", parseFloat(localStorage.getItem("mum"))+nim)
+                    document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"
                     document.getElementById("amg").style.marginLeft = Math.floor(Math.random()*(window.screen.availWidth - 200)) + 'px'
                     document.getElementById("amg").style.marginTop = Math.floor(Math.random()*(window.screen.availHeight - 350)) + 'px'
                 }

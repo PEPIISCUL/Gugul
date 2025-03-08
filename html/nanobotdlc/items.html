@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body id="z" style="background-color:#ebb3b3;">
+            <title>Nanobot Delivery Service</title>
+            <p>Items</p>
+            <a id="trashcan3" style="display: none;" href="trashcan.html">Trash Can</a>
+            <br>
+            <br>
+            <br>
+            <a href="../nanobot.html">back</a>
+            <script>
+                if (localStorage.getItem("trashcan") == "1"){
+                    document.getElementById("trashcan3").style.display = "block"
+                }
+            </script>
+        </body>
+    </head>
+</html>
