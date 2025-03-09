@@ -6,10 +6,12 @@
             <p>Shop</p>
             <p id="monn">Money: 0$</p>
             <p>Trash Can - Remove Nanobots <button id="trashcan2" onclick="trashcan()">1000$</button></p>
-            
+            <p>Almanac - See types of Nanobots <button id="almanac2" onclick="almanac()">500$</button></p>
             <br><br>
             <p>Earn Money:</p>
             <a href="catch.html">catch the nanobot</a>
+            <br>
+            <a href="math.html">math problem</a>
             <br>
             <br>
             <br>
@@ -19,6 +21,9 @@
                 document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"
                 if (localStorage.getItem("trashcan") == "1"){
                     document.getElementById("trashcan2").innerHTML = "Bought!"
+                }
+                if (localStorage.getItem("almanac") == "1"){
+                    document.getElementById("almanac2").innerHTML = "Bought!"
                 }
                 if (localStorage.getItem("moneybuy") == "1"){
                     localStorage.setItem("moneybuy", "0")
@@ -31,6 +36,18 @@
                         localStorage.setItem("mum", parseInt(localStorage.getItem("mum"))-1000)
                         document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"
                         localStorage.setItem("trashcan", "1")
+                        localStorage.setItem("moneybuy", "1")
+                        location.reload()
+                    }
+                    
+                }
+                function almanac(){
+                    
+                    if (parseInt(localStorage.getItem("mum")) > 499 && localStorage.getItem("almanac") == "0"){
+                        
+                        localStorage.setItem("mum", parseInt(localStorage.getItem("mum"))-500)
+                        document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"
+                        localStorage.setItem("almanac", "1")
                         localStorage.setItem("moneybuy", "1")
                         location.reload()
                     }

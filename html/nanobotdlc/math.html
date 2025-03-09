@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body id="z" style="background-color:#ebb3b3;">
+            <title>Nanobot Delivery Service</title>
+            <p>Math Problem</p>
+            <p id="monn">Money: 0$</p>
+            <p id="qs">17+3=?</p>
+            <input type="number" id="ans"><button onclick="answ()">Answer</button>
+            <p id="nan">NaN</p>
+            <br><br><br>
+            <a href="shop.html">back</a>
+            <script>document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"</script>
+            <script>
+                var audio = new Audio('../../audio/money.mp3')
+                var num1=1
+                var num2=1
+                var si="+"
+                var ans=0
+                var sig = 0
+                num1 = Math.floor(Math.random()*201)-100
+                num2 = Math.floor(Math.random()*201)-100
+                sig = Math.floor(Math.random()*3)
+                if (sig == 0){
+                    ans = num1 + num2
+                    si="+"
+                }
+                if (sig == 1){
+                    ans = num1 - num2
+                    si="-"
+                }
+                if (sig == 2){
+                    ans = num1 * num2
+                    si="*"
+                }
+                if (sig == 3){
+                    ans = num1 / num2
+                    si="/"
+                }
+                document.getElementById("qs").innerHTML = num1.toString() + " " + si + " " + num2.toString() + " " + "=" + " " + "?"
+                function answ(){
+                    if (document.getElementById("ans").value != ans){
+                        document.getElementById("nan").innerHTML = "Incorrect"
+                    }
+                    if (document.getElementById("ans").value == ans){
+                        audio.cloneNode(true).play();
+                        localStorage.setItem("mum", parseInt(localStorage.getItem("mum"))+50)
+                        document.getElementById("monn").innerHTML = "Money: " + parseInt(localStorage.getItem("mum")).toString() + "$"
+                        document.getElementById("nan").innerHTML = "Correct"
+
+                        num1 = Math.floor(Math.random()*201)-100
+                        num2 = Math.floor(Math.random()*201)-100
+                        sig = Math.floor(Math.random()*3)
+                        if (sig == 0){
+                            ans = num1 + num2
+                            si="+"
+                        }
+                        if (sig == 1){
+                            ans = num1 - num2
+                            si="-"
+                        }
+                        if (sig == 2){
+                            ans = num1 * num2
+                            si="*"
+                        }
+                        if (sig == 3){
+                            ans = num1 / num2
+                            si="/"
+                        }
+                        document.getElementById("qs").innerHTML = num1.toString() + " " + si + " " + num2.toString() + " " + "=" + " " + "?"
+                    }
+                    
+                }
+            </script>
+        </body>
+    </head>
+</html>

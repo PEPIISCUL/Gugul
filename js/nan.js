@@ -18,7 +18,24 @@ var audio2 = new Audio('../audio/mmms.mp3')
 //document.getElementById("a").style.marginLeft = cx
 //document.getElementById("a").style.marginTop = cy
 function animate() {
-  
+  if (localStorage.getItem("num") == null){
+      localStorage.setItem("num",0);
+  }
+  if (localStorage.getItem("mum") == null){
+      localStorage.setItem("mum",75);
+  }
+  if (localStorage.getItem("numgold") == null){
+      localStorage.setItem("numgold",0);
+  }
+  if (localStorage.getItem("trashcan") == null){
+      localStorage.setItem("trashcan", "0")
+  }
+  if (localStorage.getItem("moneybuy") == null){
+      localStorage.setItem("moneybuy", "0")
+  }
+  if (localStorage.getItem("almanac") == null){
+      localStorage.setItem("almanac", "0")
+  }
   count = count + 1
   if (count == 15){
     if (localStorage.getItem("num2") == 1){

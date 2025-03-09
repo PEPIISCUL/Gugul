@@ -12,6 +12,13 @@ var numgold = 0
 
 
 
+
+
+
+
+
+
+
 function start(){
     if (localStorage.getItem("mum") != null){
         money = parseInt(localStorage.getItem("mum"))
@@ -139,6 +146,7 @@ function fun() {
     localStorage.setItem("numgold",0);
     localStorage.setItem("trashcan", "0")
     localStorage.setItem("moneybuy", "0")
+    localStorage.setItem("almanac", "0")
     location.reload()
 }
 

@@ -5,6 +5,7 @@
             <title>Nanobot Delivery Service</title>
             <p>Items</p>
             <a id="trashcan3" style="display: none;" href="trashcan.html">Trash Can</a>
+            <a id="almanac3" style="display: none;" href="almanac.html">Almanac</a>
             <br>
             <br>
             <br>
@@ -12,6 +13,9 @@
             <script>
                 if (localStorage.getItem("trashcan") == "1"){
                     document.getElementById("trashcan3").style.display = "block"
+                }
+                if (localStorage.getItem("almanac") == "1"){
+                    document.getElementById("almanac3").style.display = "block"
                 }
             </script>
         </body>
