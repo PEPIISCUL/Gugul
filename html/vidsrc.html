@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+#mix_block_1294937123 {
+display: none;
+}
+</style>
+    </head>
+    <body>
+        <iframe id="vid" src="https://vidsrcme.ru/embed/movie?imdb=" style="width: 925px; height: 500px" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+        <br>
+
+        <input id="i1" type="text" placeholder="imdb">
+        <input id="i2" type="text" placeholder="sezona">
+        <input id="i3" type="text" placeholder="epizoda">
+        <button onClick="cul()">radi</button>
+        <!--<p id="test"></p>-->
+        <script>
+            const node = document.getElementById("i1");
+            const node2 = document.getElementById("i2");
+            const node3 = document.getElementById("i3");
+            function cul() {
+                if (node2.value == "" || node3.value == ""){
+                    document.getElementById("vid").src = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
+                    //document.getElementById("test").innerHTML = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
+                } else {
+                    document.getElementById("vid").src = "https://vidsrcme.ru/embed/tv?imdb=" + node.value + "&season=" + node2.value + "&episode=" + node3.value
+                    //document.getElementById("test").innerHTML = "https://vidsrcme.ru/embed/tv?imdb=" + node.value + "&season=" + node2.value + "&episode=" + node3.value
+                }
+                
+            }
+        </script>
+    </body>
+</html>
