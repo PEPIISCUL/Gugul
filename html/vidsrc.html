@@ -8,27 +8,60 @@ display: none;
 </style>
     </head>
     <body>
-        <iframe id="vid" src="https://vidsrcme.ru/embed/movie?imdb=" style="width: 925px; height: 500px" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+        <iframe id="vid" src="" style="width: 925px; height: 500px" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
         <br>
 
         <input id="i1" type="text" placeholder="imdb">
         <input id="i2" type="text" placeholder="sezona">
         <input id="i3" type="text" placeholder="epizoda">
-        <button onClick="cul()">radi</button>
+        <button onClick="cul()">super</button>
         <!--<p id="test"></p>-->
         <script>
             const node = document.getElementById("i1");
             const node2 = document.getElementById("i2");
             const node3 = document.getElementById("i3");
+
+            function loadd(){
+                node.value = localStorage.getItem("l1")
+                node2.value = localStorage.getItem("l2")
+                node3.value = localStorage.getItem("l3")
+                if (node.value != ""){
+                    if (node2.value == "" || node3.value == ""){
+                        if (node.value != ""){
+                            document.getElementById("vid").src = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
+                        } else {
+                            document.getElementById("vid").src = "../img/vidsrcShush.png"
+                        }
+                    } else {
+                        document.getElementById("vid").src = "https://vidsrcme.ru/embed/tv?imdb=" + node.value + "&season=" + node2.value + "&episode=" + node3.value
+                    }
+                }
+                
+            }
+
+            window.onload = function() {
+                loadd()
+            };
+
             function cul() {
                 if (node2.value == "" || node3.value == ""){
-                    document.getElementById("vid").src = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
+                    if (node.value != ""){
+                        document.getElementById("vid").src = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
+                    } else {
+                        document.getElementById("vid").src = "../img/vidsrcShush.png"
+                    }
+                    
+                    localStorage.setItem("l1", node.value);
+                    localStorage.setItem("l2", "");
+                    localStorage.setItem("l3", "");
                     //document.getElementById("test").innerHTML = "https://vidsrcme.ru/embed/movie?imdb=" + node.value
                 } else {
                     document.getElementById("vid").src = "https://vidsrcme.ru/embed/tv?imdb=" + node.value + "&season=" + node2.value + "&episode=" + node3.value
+                    localStorage.setItem("l1", node.value);
+                    localStorage.setItem("l2", node2.value);
+                    localStorage.setItem("l3", node3.value);
                     //document.getElementById("test").innerHTML = "https://vidsrcme.ru/embed/tv?imdb=" + node.value + "&season=" + node2.value + "&episode=" + node3.value
                 }
-                
             }
         </script>
     </body>
